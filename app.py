@@ -17,7 +17,7 @@ nltk.download('punkt')
 import google.generativeai as genai
 
 # Configure Google Gemini API
-genai.configure(api_key="AIzaSyCLkvelAIwv7iDVP99QUdw2JVdIyVP7b1w")  # Replace with your actual API key
+genai.configure(api_key="")  # Replace with your actual API key with ""
 model1 = genai.GenerativeModel("gemini-1.5-flash")
 
 # Initialize Flask app
