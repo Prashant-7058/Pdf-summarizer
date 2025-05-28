@@ -9,9 +9,8 @@ It supports **accurate rendering of Indic scripts** using proper font embedding 
 
 ## ✨ Features
 
-✅ Supports English, Hindi (हिंदी), and Marathi (मराठी)
-🔠 Correct Devanagari rendering using `arabic_reshaper` and `python-bidi`
-📄 Creates downloadable PDF summaries with proper formatting
+- Supports English, Hindi (हिंदी), and Marathi (मराठी)
+- Creates downloadable PDF summaries with proper formatting
 
 
 ## 🔧 Technologies Used
