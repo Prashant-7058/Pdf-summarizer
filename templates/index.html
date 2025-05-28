@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Genius Pro | AI Document Summarizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo" data-aos="fade-down">
+                <i class="fas fa-robot"></i>
+                <h1>PDF Genius Pro</h1>
+            </div>
+            <p class="tagline" data-aos="fade-down" data-aos-delay="100">Transform documents into actionable insights</p>
+        </header>
+
+        <!-- Features Cards -->
+        <div class="features" data-aos="fade-up">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3> Flexible Output</h3>
+                <p>Summarize based on  needs</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-language"></i>
+                </div>
+                <h3>Multilingual</h3>
+                <p>Summarize in 5+ languages</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>Smart Formatting</h3>
+                <p>Beautifully structured outputs</p>
+            </div>
+        </div>
+
+        <!-- Main App -->
+        <main class="app-container" data-aos="zoom-in" data-aos-delay="200">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div id="drop-area" class="upload-box">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt pulse"></i>
+                        <h3>Drag & Drop PDF</h3>
+                        <p>or <span class="browse-link">browse files</span></p>
+                    </div>
+                    <input type="file" id="file-input" accept=".pdf" hidden>
+                </div>
+                <div id="file-info" class="file-info hidden">
+                    <i class="fas fa-file-pdf"></i>
+                    <span id="file-name"></span>
+                    <button id="clear-file" class="clear-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Controls -->
+            <section class="controls">
+                <div class="toggle-group">
+                    <button id="abstractive" class="toggle-btn active" data-tooltip="AI-generated summary in new words">
+                        <i class="fas fa-brain"></i> Abstractive
+                    </button>
+                    <button id="extractive" class="toggle-btn" data-tooltip="Key sentences from original text">
+                        <i class="fas fa-quote-right"></i> Extractive
+                    </button>
+                </div>
+
+                <div class="select-group">
+                    <label for="language"><i class="fas fa-globe"></i> Language</label>
+                    <select id="language">
+                        <option value="english">English</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="french">French</option>
+                        <option value="german">German</option>
+                        <option value="marathi">Marathi</option>
+                    </select>
+                </div>
+
+                <div class="prompt-group">
+                    <label for="summary_length">Select Summary Length:</label>
+                    <select name="summary_length" id="summary_length">
+                    <option value="10" selected>10%</option>
+                    <option value="20">20%</option>
+                    <option value="30">30%</option>
+                    <option value="40">40%</option>
+                    <option value="50">50%</option>
+                    <option value="60">60%</option>
+                    <option value="70">70%</option>
+                    <option value="80">80%</option>
+                    <option value="90">90%</option>
+                    <option value="100">100%</option>
+                    </select>
+
+                </div>
+
+
+            </section>
+
+            <!-- Action Button -->
+            <button id="summarize-btn" class="btn action-btn" disabled>
+                <span class="btn-text">Generate Summary</span>
+                <span class="btn-icon"><i class="fas fa-sparkles"></i></span>
+            </button>
+
+            <!-- Progress Bar -->
+            <div id="progress-container" class="progress-container hidden">
+                <div class="progress-track ">
+                    <div class="progress-fill "></div>
+                </div>
+                <p class="progress-text ">Crunching your document...</p>
+                <div id="resultsSection" class="hidden">
+                    <p id="summaryContent"></p>
+                    <p id="processingTime"></p>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <section id="results" class="results hidden">
+                <div class="results-header">
+                    <h2><i class="fas fa-file-alt"></i> AI Summary</h2>
+                    <div class="meta-info">
+                        <span id="processing-time"></span>
+                        <button id="copy-summary" class="icon-btn" data-tooltip="Copy to clipboard">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+                <div id="summary-content" class="summary-content"></div>
+                <button id="download-btn" class="btn download-btn">
+                    <i class="fas fa-download"></i> Download PDF
+                </button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>Powered by DYPCET</p>
+        </footer>
+    </div>
+
+    <!-- Tooltip container -->
+    <div id="tooltip" class="tooltip"></div>
+
+    <!-- Confetti canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="/static/script.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-quad',
+            once: true
+        });
+    </script>
+</body>
+</html>
