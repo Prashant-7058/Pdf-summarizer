@@ -24,4 +24,23 @@ It supports **accurate rendering of Indic scripts** using proper font embedding 
 * `arabic_reshaper` + `python-bidi` (for Indic script support)
 * Custom fonts: NotoSans
 
+## Setup Instructions
+- Create virtual environment: 
+  python -m venv venv
+
+- Activate the environment : 
+  venv\Scripts\activate   # For Windows
+  OR
+  source venv/bin/activate   # For macOS/Linux
+
+- Install dependencies:
+  pip install -r requirements.txt
+
+- Replace your API key
+
+  Open app.py and replace the placeholder with your actual API key where required. (gemini api key)
+
+- run :
+  python app.py
+
 
