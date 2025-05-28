@@ -6,7 +6,6 @@ This project is a **Flask-based web tool** that allows users to **upload PDF fil
 
 It supports **accurate rendering of Indic scripts** using proper font embedding and text reshaping to ensure correct display in the output PDF.
 
----
 
 ## ✨ Features
 
