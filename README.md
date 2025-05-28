@@ -14,14 +14,12 @@ It supports **accurate rendering of Indic scripts** using proper font embedding 
 🔠 Correct Devanagari rendering using `arabic_reshaper` and `python-bidi`
 📄 Creates downloadable PDF summaries with proper formatting
 
----
 
 ## 🔧 Technologies Used
 
 * Python 🐍
 * Flask 🌐
 * FPDF (for PDF generation)
-* `arabic_reshaper` + `python-bidi` (for Indic script support)
 * Custom fonts: NotoSans
 
 ## Setup Instructions
